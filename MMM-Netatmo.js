@@ -67,6 +67,7 @@ const NetatmoDataType = {
 Module.register("MMM-Netatmo", {
 	// default config,
 	defaults: {
+		deviceNumber: config.deviceNumber,
 		units: config.units,
 		//for AirQuality
 		lang: config.language,
@@ -255,8 +256,8 @@ Module.register("MMM-Netatmo", {
 	renderAll: function (data) {
 
 		// Log.log("Netatmo : renderAll");
+		var device = data.body.devices[this.config.deviceNumber];
 		// Log.info(this.name + " data loaded, updated "+moment(new Date(1000*device.dashboard_data.time_utc)).fromNow());
-		var device = data.body.devices[0];
 		this.lastUpdate = device.dashboard_data.time_utc;
 		lastUpdateServeurNetatmo = device.dashboard_data.time_utc;
 		// render modules

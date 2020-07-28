@@ -64,7 +64,7 @@ The module needs the default configuration block in your config.js to work.
 		clientId: '', // your app id
 		clientSecret: '', // your app secret
 		refreshToken: '', // your generated refresh token
-		
+		deviceNumber: 0 // In case you have several Netatmo devices in your "home".
 		location: "germany/berlin",  //for AirQuality
 		updateIntervalAirQuality: 600, // in secondes = every 30 minutes
 		updatesIntervalDisplay: 60, //refresh internal
@@ -92,6 +92,7 @@ The following properties can be configured:
 |clientId|The ID of your Netatmo [application](https://dev.netatmo.com/dev/listapps).<br><br>This value is **REQUIRED**|
 |clientSecret|The app secret of your Netatmo [application](https://dev.netatmo.com/dev/listapps).<br><br>This value is **REQUIRED**|
 |refreshToken|The generated refresh token you got from the POST request to the auth api.<br><br>This value is **REQUIRED**|
+|deviceNumber|The device number you wish to display, 0 is the default one.
 |updatesIntervalDisplay|How often to check if netatmo datas needs to be updated? (Minutes) No Netatmo server request with this value. Netatmo request minimum every 11 min.<br>Data is updated by netatmo every 10 minutes.<br><br>**Default value:** `1`|
 |moduleOrder|The rendering order of your weather modules, ommit a module to hide the output.<br><br>**Example:** `["Kitchen","Kid's Bedroom","Garage","Garden"]` <br>Be aware that you need to use the module names that you set in the netatmo configuration.|
 |location|For AirQuality display. Use the part behind http://aqicn.org/city/ for your location. For example http://aqicn.org/city/netherland/utrecht/griftpark/<br><br>**Example:** `'germany/berlin'`|
